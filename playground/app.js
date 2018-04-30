@@ -1,38 +1,12 @@
-var person = {
-  firstname: 'Default',
-  lastname: 'Default',
-  getFullName: function() {
-    return this.firstname + ' ' + this.lastname;
-  }
-};
-
-var john = {
-  firstname: 'John',
-  lastname: 'Doe'
-};
-
-// don't do this EVER! for demo purpose only!!
-john.__proto__ = person;
-
-for (var prop in john) {
-  if (john.hasOwnProperty(prop)) {
-    console.log(prop + ': ' + john[prop]);
-  }
+function Person(firstname, lastname) {
+  console.log(this);
+  this.firstname = firstname;
+  this.lastname = lastname;
+  console.log('This function is invoked');
 }
 
-var jane = {
-  address: '111 Main st',
-  getFormalFullName: function() {
-    return this.lastname + ', ' + this.firstname;
-  }
-};
-
-var jim = {
-  getFirstName: function() {
-    return firstname;
-  }
-};
-
-_.extend(john, jane, jim);
-
+var john = new Person('John', 'Doe');
 console.log(john);
+
+var jane = new Person('Jane', 'Doe');
+console.log(jane);
