@@ -1,22 +1,13 @@
-function Person(firstname, lastname) {
-  console.log(this);
-  this.firstname = firstname;
-  this.lastname = lastname;
-  console.log('This function is invoked');
-}
-
-Person.prototype.getFullName = function() {
-  return this.firstname + ' ' + this.lastname;
+String.prototype.isLengthGreaterThan = function(limit) {
+  return this.length > limit;
 };
 
-var john = new Person('John', 'Doe');
-console.log(john);
+console.log('John'.isLengthGreaterThan(3));
 
-var jane = new Person('Jane', 'Doe');
-console.log(jane);
-
-Person.prototype.getFormalFullName = function() {
-  return this.lastname + ', ' + this.firstname;
+Number.prototype.isPositive = function() {
+  return this > 0;
 };
 
-console.log(john.getFormalFullName());
+// 1.isPositive() wont work, because JS interprets the dot as decimal point
+// console.log(1.isPositive());
+console.log((1).isPositive());
