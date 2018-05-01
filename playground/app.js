@@ -1,13 +1,8 @@
-String.prototype.isLengthGreaterThan = function(limit) {
-  return this.length > limit;
-};
+Array.prototype.myCustomFeature = 'cool!';
 
-console.log('John'.isLengthGreaterThan(3));
+var arr = ['John', 'Jane', 'Jim'];
 
-Number.prototype.isPositive = function() {
-  return this > 0;
-};
+for (var prop in arr) {
+  console.log(prop + ': ' + arr[prop]);
+}
 
-// 1.isPositive() wont work, because JS interprets the dot as decimal point
-// console.log(1.isPositive());
-console.log((1).isPositive());
