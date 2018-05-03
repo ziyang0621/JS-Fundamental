@@ -1,27 +1,19 @@
-// this is still an object, not a class
-class Person {
-  constructor(firstname, lastname) {
-    this.firstname = firstname;
-    this.lastname = lastname;
+var people = [
+  {
+    // the 'john' object
+    firstname: 'John',
+    lastname: 'Doe',
+    address: ['111 Main St.', '222 Third St.']
+  },
+  {
+    // the 'jane' object
+    firstname: 'Jane',
+    lastname: 'Doe',
+    address: ['333 Main St.', '444 Fifth St.'],
+    greet: function() {
+      return 'Hello!';
+    }
   }
+];
 
-  greet() {
-    return 'Hi ' + this.firstname;
-  }
-}
-
-var john = new Person('John', 'Doe');
-console.log(john);
-
-class InformalPerson extends Person {
-  constructor(firstname, lastname) {
-    super(firstname, lastname);
-  }
-
-  greet() {
-    return 'Yo ' + this.firstname;
-  }
-}
-
-var jane = new InformalPerson('Jane', 'Doe');
-console.log(jane);
+console.log(people);
